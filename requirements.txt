@@ -1,0 +1,29 @@
+# JN Shah Associates: Project Dependencies
+# This project uses Node.js and npm (package.json).
+# For Python-like 'requirements.txt' equivalent, see package.json.
+# This list is for architectural documentation only.
+
+# Core Framework & Routing
+react=19.2.0
+react-dom=19.2.0
+react-router-dom=7.13.0
+
+# Styling & Animation
+tailwindcss=4.1.18
+framer-motion=12.34.0
+lucide-react=0.563.0
+
+# Backend & Database
+@supabase/supabase-js=2.95.3
+
+# Utilities
+date-fns=4.1.0
+react-day-picker=9.13.2
+react-google-recaptcha=3.1.0
+react-helmet-async=2.0.5
+
+# Development Tools
+vite=7.3.1
+autoprefixer=10.4.24
+postcss=8.5.6
+eslint=9.39.1
