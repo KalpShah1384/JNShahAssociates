@@ -1,17 +1,17 @@
-# 🚀 Project Deployment Guide: JN Shah Associates
+#  Project Deployment Guide: JN Shah Associates
 
 This guide provides a step-by-step process for deploying the **JN Shah Associates** platform to a professional production environment.
 
 ---
 
-## 🏗️ 1. Prerequisites
+##  1. Prerequisites
 - A **GitHub / GitLab / Bitbucket** account.
 - A **Vercel** account (Recommended for Vite/React).
 - Access to your **Supabase Dashboard**.
 
 ---
 
-## 📤 2. Push Code to GitHub
+##  2. Push Code to GitHub
 1. Create a new repository on GitHub (e.g., `jn-shah-associates`).
 2. Open your terminal in the project root:
    ```bash
