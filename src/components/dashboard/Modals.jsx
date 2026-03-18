@@ -13,7 +13,7 @@ const DeadlineModal = ({
     if (!showDeadlineModal) return null;
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-y-auto">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -93,7 +93,7 @@ const NotificationModal = ({ notification, setNotification }) => {
     if (!notification.show) return null;
 
     return (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 overflow-y-auto">
             <motion.div
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 className="absolute inset-0 bg-brand-navy/60 backdrop-blur-md"
@@ -155,7 +155,7 @@ const AdminNotificationModal = ({
     if (!show) return null;
 
     return (
-        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 overflow-y-auto">
             <motion.div
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 className="absolute inset-0 bg-brand-navy/60 backdrop-blur-md"
@@ -248,7 +248,7 @@ const ProfileModal = ({ show, onClose, profile, user, onUpdate, onAvatarUpload, 
     };
 
     return (
-        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 overflow-y-auto">
             <motion.div
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 className="absolute inset-0 bg-brand-navy/60 backdrop-blur-md"
@@ -373,7 +373,7 @@ const UploadModal = ({ show, onClose, onUpload, isUploading }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 overflow-y-auto">
             <motion.div
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 className="absolute inset-0 bg-brand-navy/60 backdrop-blur-md"

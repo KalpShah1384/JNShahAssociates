@@ -360,7 +360,7 @@ const Dashboard = () => {
     if (loading) return null;
 
     return (
-        <div className="min-h-screen bg-[#f8fafc] pt-24 md:pt-32 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-[#f8fafc] pt-16 md:pt-24 pb-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <DashboardHeader
                     profile={profile}

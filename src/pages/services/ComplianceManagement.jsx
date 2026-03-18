@@ -15,7 +15,7 @@ const ComplianceManagement = () => {
     ];
 
     return (
-        <div className="pt-40 pb-24">
+        <div className="pt-28 pb-24">
             <SEO
                 title="ROC & Corporate Compliance Services"
                 description="Hassle-free ROC filings, labor law compliance, and company secretarial services in Vadodara. Stay compliant with MCA and labor regulations. "

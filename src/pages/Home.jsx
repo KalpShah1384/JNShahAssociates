@@ -57,7 +57,7 @@ const Home = () => {
                 keywords="Chartered Accountant Vadodara, CA firm Gujarat, JN Shah Associates, Nayan Shah, Jay Shah, GST Registration Vadodara, Audit services India"
             />
             {/* Hero Section */}
-            <section className="relative min-h-[90vh] flex items-center pt-32 pb-24 md:pt-40 md:pb-32">
+            <section className="relative min-h-[90vh] flex items-center pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden">
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     <div className="absolute top-20 right-0 w-64 h-64 md:w-96 md:h-96 bg-brand-primary/10 rounded-full blur-[80px] md:blur-[120px]" />
                     <div className="absolute bottom-20 left-0 w-48 h-48 md:w-72 md:h-72 bg-brand-ice/50 rounded-full blur-[70px] md:blur-[100px]" />
@@ -160,7 +160,7 @@ const Home = () => {
                                 <div key={idx} className="p-6 md:p-8 bg-brand-bg/40 rounded-[2rem] md:rounded-[2.5rem] border border-brand-ice hover:bg-white hover:shadow-2xl hover:shadow-brand-navy/5 transition-all group flex flex-col h-full">
                                     <div className="flex justify-between items-start mb-6">
                                         <span className="text-[10px] font-black text-brand-navy/40 uppercase tracking-widest">
-                                            {new Date(update.pubDate).toLocaleDateString('en-IN', { day: '2-digit', month: 'short' })}
+                                            {update.pubDate ? new Date(update.pubDate).toLocaleDateString('en-IN', { day: '2-digit', month: 'short' }) : 'UPDATE'}
                                         </span>
                                         <span className="bg-brand-primary/10 text-brand-primary px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-wider">Update</span>
                                     </div>

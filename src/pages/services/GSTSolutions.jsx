@@ -15,7 +15,7 @@ const GSTSolutions = () => {
     ];
 
     return (
-        <div className="pt-40 pb-24">
+        <div className="pt-28 pb-24">
             <SEO
                 title="GST Registration & Filing Solutions"
                 description="Comprehensive GST services in Gujarat including registration, monthly filing, and audit representation. Maximize your Input Tax Credit with our experts."

@@ -3,7 +3,7 @@ import { Shield, Eye, Lock, FileText, AlertTriangle, Phone } from "lucide-react"
 
 const PrivacyPolicy = () => {
   return (
-    <div className="bg-gray-50 pt-32 pb-24">
+    <div className="bg-gray-50 pt-28 pb-24">
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

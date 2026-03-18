@@ -15,7 +15,7 @@ const DirectTax = () => {
     ];
 
     return (
-        <div className="pt-40 pb-24">
+        <div className="pt-28 pb-24">
             <SEO
                 title="Direct Tax Advisory & ITR Filing"
                 description="Expert income tax planning, ITR filing, and audit services in Vadodara. Strategic advice for individuals and corporations under the Income Tax Act."

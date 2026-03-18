@@ -15,7 +15,7 @@ const Footer = () => {
                         <Link to="/" className="flex items-center space-x-3 group">
                             <img src={Logo} alt="JN Shah Associates Logo" className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
                             <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl md:text-3xl font-bold text-white tracking-normal">
-                                JN<span className="text-brand-primary italic ml-1">Shah Associates</span>
+                                JN<span className="text-brand-ice italic ml-1">Shah Associates</span>
                             </span>
                         </Link>
                         <p className="text-brand-ice/60 leading-relaxed font-bold text-sm tracking-wide">
@@ -38,11 +38,16 @@ const Footer = () => {
                     <div>
                         <h3 className="text-white font-black text-xs uppercase tracking-[0.2em] mb-10 border-b border-white/10 pb-4 inline-block">Navigation Hub</h3>
                         <ul className="grid grid-cols-1 gap-4 text-brand-ice/70 font-bold text-sm">
-                            {['Home', 'About Firm', 'Service Verticals', 'Schedule Meeting'].map((item) => (
-                                <li key={item}>
-                                    <Link to={`/${item === 'Home' ? '' : item.toLowerCase().split(' ')[0]}`} className="hover:text-brand-primary transition-colors flex items-center group">
+                            {[
+                                { name: 'Home', path: '/' },
+                                { name: 'About Firm', path: '/about' },
+                                { name: 'Service Verticals', path: '/services' },
+                                { name: 'Schedule Meeting', path: '/book' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link to={item.path} className="hover:text-brand-primary transition-colors flex items-center group">
                                         <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-all -ml-5 group-hover:ml-0" />
-                                        {item}
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -92,7 +97,7 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-brand-ice/40 text-[11px] font-black uppercase tracking-widest">
-                    <p>© 2026 JN SHAH ASSOCIATES. ALL RIGHTS RESERVED. DESIGNED FOR PERFORMANCE.</p>
+                    <p>© 2026 JN SHAH ASSOCIATES. ALL RIGHTS RESERVED.</p>
                     <div className="flex space-x-10 mt-6 md:mt-0">
                         <Link to="/privacy" className="hover:text-brand-primary transition-colors">Privacy Charter</Link>
                         <Link to="/disclaimer" className="hover:text-brand-primary transition-colors">ICAI Compliance</Link>

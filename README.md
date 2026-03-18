@@ -10,43 +10,65 @@ A high-performance, secure, and ICAI-compliant digital ecosystem designed specif
 
 ---
 
-## 📊 System Architecture & Data Flow
+## 📊 System Architecture & Data Flow (DFD)
 
 Our architecture prioritizes **Security-First** principles, ensuring that sensitive financial data is isolated and protected at the database level.
 
 ```mermaid
 graph TD
     %% User Types
-    C[Client] -->|HTTPS| FE[React Frontend]
-    A[Admin] -->|HTTPS| FE
+    C[Client] -->|Auth/Data Requests| FE[React Frontend]
+    A[Admin] -->|Management Actions| FE
 
     subgraph "Enterprise Frontend (Vite + React)"
-        FE -->|Auth Request| AU[Supabase Auth]
-        FE -->|Data Request| DB[Supabase Database]
-        FE -->|File Upload/Download| ST[Supabase Storage]
+        FE -->|Browser Storage| LS[Local Session]
+        FE -->|API Calls| AU[Supabase Auth]
+        FE -->|Query/Mutate| DB[Supabase Database]
+        FE -->|Storage Upload| ST[Supabase Storage]
     end
 
     subgraph "Secure Cloud Backend (Supabase)"
-        AU -->|Session Management| FE
+        AU -->|JWT Verification| RLS
         
         subgraph "Security Layer (PostgreSQL)"
-            RLS{RLS Policies}
+            RLS{Row Level Security}
             DB --- RLS
             ST --- RLS
         end
         
-        RLS -->|Auth UID Check| PRIVATE_DATA[(Private Records)]
+        RLS -->|Strict Isolation| PRIVATE_DATA[(Private Client Records)]
+        PRIVATE_DATA -->|Secure Response| FE
     end
 
     subgraph "External Integrations"
-        FE -->|News Alerts| ND[NewsData.io API]
-        FE -->|Instant Support| WA[WhatsApp API]
+        FE -->|Regulatory News| ND[NewsData.io API]
+        FE -->|Support Access| WA[WhatsApp API]
+        FE -->|Payment Processing| RZ[Razorpay API (Test Mode)]
     end
 
     %% Styles
     style RLS fill:#f96,stroke:#333,stroke-width:2px
     style PRIVATE_DATA fill:#bbf,stroke:#333,stroke-width:2px
+    style FE fill:#eff,stroke:#007acc,stroke-width:2px
 ```
+
+---
+
+## 🚀 Recent Professional Refinements (March 18th)
+
+Today we implemented significant UI/UX and logic improvements to ensure the platform is production-ready:
+
+### 🎨 Visual & Branding Polish
+- **Dynamic Navbar**: Switched to an intelligent navbar that toggles between **White text on dark headers** (Knowledge Hub, Booking) and **Navy text on light backgrounds**.
+- **Header Contrast**: Redesigned the "Knowledge Vault" and "Consultation Details" headers with improved contrast (Ice Blue on Navy) for perfect legibility.
+- **Top Spacing Optimization**: Reduced the top padding across all 15+ pages (About, Home, Services, etc.) by ~30% to pull content closer to the navbar on desktop.
+- **Footer Visibility**: Corrected "Shah Associates" and ICAI disclaimer colors for accessibility.
+
+### 🧩 Logic & Stability
+- **Knowledge Hub Resilience**: Implemented robust date parsing and null-checks for the External News API, preventing crashes during regulatory updates.
+- **Navigation Hub Fixes**: Corrected broken mapping for "Service Verticals" (`/services`) and "Schedule Meeting" (`/book`).
+- **Dashboard Permissions**: Restricted "Priority Support" and "Strategic Hub" to **Client view only**, streamlining the Admin experience.
+- **Action CTA Redirects**: Wired the "Connect Now" buttons directly to the booking flow for higher conversion.
 
 ---
 
@@ -55,17 +77,12 @@ graph TD
 ### 🔐 Secure Client Portal (The "Vault")
 - **Row Level Security (RLS)**: Database-enforced isolation ensuring clients can *only* access their own files.
 - **Enterprise Storage**: Private bucket for high-integrity document management (PAN, GST, Audit reports).
-- **Session Management**: Automated session termination on tab closure for maximum security.
+- **Session Management**: Automated session termination on logout and recovery flow isolation for maximum security.
 
 ### 💼 Professional Services Hub
-- **Statutory Updates**: Live "Regulatory Radar" fetching real-time tax and finance alerts.
-- **Service Verticals**: Deep-dive pages for Direct Tax, GST, Audit, and Advisory.
-- **Knowledge Center**: A centralized repository for firm insights and SEO-optimized articles.
-
-### 🛠️ Administrative Control
-- **Master Dashboard**: Unified view for the firm's partners to manage client folders and deadlines.
-- **Global Broadcasts**: System-wide notifications for significant tax deadline changes.
-- **Document Review**: Streamlined workflow for verifying and approving client-uploaded records.
+- **Statutory Updates**: Live "Regulatory Radar" fetching real-time tax and finance alerts via NewsData.io.
+- **Service Verticals**: Deep-dive pages for Direct Tax, GST, Audit, and Advisory with industry-specific modules.
+- **Knowledge Center**: A centralized repository for firm insights and professional circulars.
 
 ---
 
@@ -74,6 +91,7 @@ graph TD
 | Layer | Technology | Purpose |
 | :--- | :--- | :--- |
 | **Frontend** | React 19 + Vite | High-performance SPA with fast refresh |
+| **Routing** | React Router 7 | Unified animated routing |
 | **Logic** | JavaScript (ES6+) | Robust client-side application logic |
 | **Styling** | Tailwind CSS | Premium, custom-branded design system |
 | **Animation** | Framer Motion | Smooth Transitions & Micro-interactions |
@@ -98,19 +116,6 @@ e:/CA/
 ├── SUPABASE_SETUP.md       # SQL Scripts & RLS Policy setup
 └── requirements.txt        # Full dependency audit
 ```
-
----
-
-## 🚀 Deployment & Integrity
-
-This platform is optimized for **Vercel** or **Netlify**. For a step-by-step guide on setting up the production environment, refer to:
-👉 **[Deployment Guide](file:///e:/CA/DEPLOYMENT_GUIDE.md)**
-
-### 🛡️ Security Checkpoint
-Before going live, ensure:
-1.  **RLS is Active**: All table policies must be enabled in Supabase as per `SUPABASE_SETUP.md`.
-2.  **Redirect URLs**: Add your production domain in Supabase Auth settings.
-3.  **Environment Sync**: Ensure all `.env` secrets are mirrored in your hosting provider.
 
 ---
 

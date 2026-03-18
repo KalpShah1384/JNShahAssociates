@@ -15,7 +15,7 @@ const InternationalTax = () => {
     ];
 
     return (
-        <div className="pt-40 pb-24">
+        <div className="pt-28 pb-24">
             <SEO
                 title="International Taxation & NRI Services"
                 description="Expert cross-border tax advisory in Vadodara. Specializing in DTAA benefits, NRI taxation, transfer pricing, and 15CA/15CB certifications."

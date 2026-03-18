@@ -82,7 +82,7 @@ const Services = () => {
     ];
 
     return (
-        <div className="pt-40 pb-24">
+        <div className="pt-28 pb-24">
             {/* Header */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 text-center">
                 <motion.div
@@ -107,21 +107,21 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="bg-white p-10 rounded-[2.5rem] border border-brand-ice group h-full flex flex-col hover:border-brand-primary hover:shadow-2xl hover:shadow-brand-primary/5 transition-all duration-500"
+                            className="bg-white p-10 rounded-[2.5rem] border border-brand-ice group h-full flex flex-col items-center sm:items-start text-center sm:text-left hover:border-brand-primary hover:shadow-2xl hover:shadow-brand-primary/5 transition-all duration-500"
                         >
                             <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-10 transition-all duration-300 group-hover:bg-brand-primary">
                                 <cat.icon className="w-8 h-8 text-brand-primary group-hover:text-white transition-colors" />
                             </div>
                             <h2 className="text-2xl font-bold mb-8 text-brand-navy group-hover:text-brand-primary transition-colors">{cat.title}</h2>
-                            <ul className="space-y-4 flex-grow mb-10">
+                            <ul className="space-y-4 flex-grow mb-10 w-full">
                                 {cat.services.map((service, sIdx) => (
-                                    <li key={sIdx} className="flex items-center text-corporate-text hover:text-brand-primary transition-colors">
+                                    <li key={sIdx} className="flex items-center justify-center sm:justify-start text-corporate-text hover:text-brand-primary transition-colors">
                                         <div className="w-2 h-2 rounded-full bg-brand-primary/40 mr-4 shrink-0 transition-all group-hover:bg-brand-primary" />
                                         <span className="text-sm font-bold tracking-tight">{service}</span>
                                     </li>
                                 ))}
                             </ul>
-                            <Link to={`/services/${cat.slug}`} className="mt-auto flex items-center text-brand-primary font-extrabold text-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                            <Link to={`/services/${cat.slug}`} className="mt-auto flex items-center justify-center sm:justify-start text-brand-primary font-extrabold text-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform">
                                 Explore Details <ChevronRight className="w-5 h-5 ml-1" />
                             </Link>
                         </motion.div>

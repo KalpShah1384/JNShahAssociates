@@ -68,16 +68,18 @@ const DashboardSidebar = ({
             </div>
 
             {/* Priority Support */}
-            <div className="bg-brand-navy rounded-3xl p-8 text-white relative overflow-hidden shadow-2xl shadow-brand-navy/20">
-                <MessageSquare className="absolute -right-4 -bottom-4 w-32 h-32 text-white/5 -rotate-12" />
-                <div className="relative z-10 text-center">
-                    <h4 className="text-lg font-black font-heading mb-2">Priority Support</h4>
-                    <p className="text-sm font-medium text-white/70 mb-6 leading-relaxed">Need instant assistance with GST or Audit filings?</p>
-                    <button className="w-full bg-white text-brand-navy py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all hover:bg-brand-ice active:scale-95">
-                        Connect Now
-                    </button>
+            {!isAdmin && (
+                <div className="bg-brand-navy rounded-3xl p-8 text-white relative overflow-hidden shadow-2xl shadow-brand-navy/20">
+                    <MessageSquare className="absolute -right-4 -bottom-4 w-32 h-32 text-white/5 -rotate-12" />
+                    <div className="relative z-10 text-center">
+                        <h4 className="text-lg font-black font-heading mb-2">Priority Support</h4>
+                        <p className="text-sm font-medium text-white/70 mb-6 leading-relaxed">Need instant assistance with GST or Audit filings?</p>
+                        <Link to="/book" className="block w-full bg-white text-brand-navy py-4 rounded-2xl font-black uppercase tracking-widest text-center text-xs transition-all hover:bg-brand-ice active:scale-95">
+                            Connect Now
+                        </Link>
+                    </div>
                 </div>
-            </div>
+            )}
 
             {/* Strategic Shortcuts */}
             {!isAdmin && (

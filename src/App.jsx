@@ -31,10 +31,11 @@ import InternationalTax from './pages/services/InternationalTax';
 
 const PageWrapper = ({ children }) => (
   <motion.div
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -10 }}
-    transition={{ duration: 0.4, ease: "easeOut" }}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.2, ease: "easeOut" }}
+    style={{ minHeight: '100vh' }}
   >
     {children}
   </motion.div>
@@ -84,7 +85,7 @@ function App() {
         <div className="min-h-screen flex flex-col overflow-x-hidden">
           <ScrollToTop />
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow relative bg-brand-bg" style={{ minHeight: '100vh' }}>
             <AnimatedRoutes />
           </main>
           <WhatsAppButton />

@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { format, addDays, startOfToday, isSameDay, isBefore } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 // No default CSS import to prevent ghosting effects
@@ -11,6 +12,13 @@ import {
 import SEO from '../components/SEO';
 
 const Booking = () => {
+  // Initialize EmailJS with user ID from environment
+  useEffect(() => {
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+    if (userId) {
+      emailjs.init(userId);
+    }
+  }, []);
     const [step, setStep] = useState(1);
     const [bookingData, setBookingData] = useState({
         service: null,
@@ -43,7 +51,7 @@ const Booking = () => {
     const isStep3Valid = bookingData.name && bookingData.email && bookingData.phone;
 
     return (
-        <div className="pt-40 pb-24 min-h-screen bg-brand-bg">
+        <div className="pt-28 pb-24 min-h-screen bg-brand-bg">
             <SEO
                 title="Schedule a Professional Consultation"
                 description="Book a slot with CA Jay Shah or CA Nayan Shah. Professional tax and audit advisory tailored to your specific business requirements."
@@ -79,13 +87,13 @@ const Booking = () => {
                         {/* Sidebar Info */}
                         <div className="lg:col-span-4 bg-brand-navy p-10 text-white relative overflow-hidden">
                             <div className="relative z-10 h-full flex flex-col">
-                                <h2 className="text-xl font-black mb-8 font-heading uppercase tracking-widest text-brand-primary">Consultation Details</h2>
+                                <h2 className="text-xl font-black mb-8 font-heading uppercase tracking-widest text-white">Consultation Details</h2>
 
                                 <div className="space-y-8 flex-grow">
                                     {bookingData.service && (
                                         <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="flex items-start space-x-4">
-                                            <div className="w-10 h-10 bg-brand-primary/20 rounded-xl flex items-center justify-center shrink-0">
-                                                <Briefcase className="w-5 h-5 text-brand-primary" />
+                                            <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
+                                                <Briefcase className="w-5 h-5 text-white" />
                                             </div>
                                             <div>
                                                 <div className="text-[10px] font-black uppercase tracking-widest text-brand-ice/50 mb-1">Service</div>
@@ -96,8 +104,8 @@ const Booking = () => {
 
                                     {bookingData.date && (
                                         <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="flex items-start space-x-4">
-                                            <div className="w-10 h-10 bg-brand-primary/20 rounded-xl flex items-center justify-center shrink-0">
-                                                <CalendarIcon className="w-5 h-5 text-brand-primary" />
+                                            <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
+                                                <CalendarIcon className="w-5 h-5 text-white" />
                                             </div>
                                             <div>
                                                 <div className="text-[10px] font-black uppercase tracking-widest text-brand-ice/50 mb-1">Date</div>
@@ -108,8 +116,8 @@ const Booking = () => {
 
                                     {bookingData.time && (
                                         <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="flex items-start space-x-4">
-                                            <div className="w-10 h-10 bg-brand-primary/20 rounded-xl flex items-center justify-center shrink-0">
-                                                <Clock className="w-5 h-5 text-brand-primary" />
+                                            <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
+                                                <Clock className="w-5 h-5 text-white" />
                                             </div>
                                             <div>
                                                 <div className="text-[10px] font-black uppercase tracking-widest text-brand-ice/50 mb-1">Time Slot</div>
@@ -136,7 +144,7 @@ const Booking = () => {
                         </div>
 
                         {/* Booking Flow Content */}
-                        <div className="lg:col-span-8 p-10 md:p-14">
+                        <div className="lg:col-span-8 p-6 sm:p-10 md:p-14">
                             <AnimatePresence mode="wait">
                                 {step === 1 && (
                                     <motion.div
@@ -174,11 +182,11 @@ const Booking = () => {
                                             ))}
                                         </div>
 
-                                        <div className="flex justify-end pt-10">
+                                        <div className="flex flex-col-reverse sm:flex-row justify-end gap-4 pt-10 mt-4">
                                             <button
                                                 onClick={() => setStep(2)}
                                                 disabled={!isStep1Valid}
-                                                className="btn-primary flex items-center space-x-3 disabled:opacity-30 disabled:grayscale"
+                                                className="btn-primary w-full sm:w-auto flex items-center justify-center space-x-3 disabled:opacity-30 disabled:grayscale"
                                             >
                                                 <span>Continue to Schedule</span>
                                                 <ArrowRight className="w-5 h-5" />
@@ -258,12 +266,12 @@ const Booking = () => {
                                             </div>
                                         </div>
 
-                                        <div className="flex justify-between pt-10">
-                                            <button onClick={() => setStep(1)} className="btn-secondary group">Back</button>
+                                        <div className="flex flex-col-reverse sm:flex-row justify-between gap-4 pt-10 mt-4">
+                                            <button onClick={() => setStep(1)} className="btn-secondary w-full sm:w-auto text-center">Back</button>
                                             <button
                                                 onClick={() => setStep(3)}
                                                 disabled={!isStep2Valid}
-                                                className="btn-primary flex items-center space-x-3 disabled:opacity-30"
+                                                className="btn-primary w-full sm:w-auto flex items-center justify-center space-x-3 disabled:opacity-30"
                                             >
                                                 <span>Personal Details</span>
                                                 <ArrowRight className="w-5 h-5" />
@@ -318,10 +326,51 @@ const Booking = () => {
                                             </div>
                                         </div>
 
-                                        <div className="flex justify-between pt-10">
-                                            <button onClick={() => setStep(2)} className="btn-secondary">Back</button>
+                                        <div className="flex flex-col-reverse sm:flex-row justify-between gap-4 pt-10 mt-4">
+                                            <button onClick={() => setStep(2)} className="btn-secondary w-full sm:w-auto text-center">Back</button>
                                             <button
-                                                onClick={() => setStep(4)}
+                                                onClick={async () => {
+            try {
+              // Send admin notification
+              console.log('Sending admin email...', {
+                service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ADMIN
+              });
+              const adminRes = await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ADMIN,
+                {
+                  admin_email: 'jnshahassociates8002@gmail.com',
+                  client_name: bookingData.name,
+                  client_email: bookingData.email,
+                  client_phone: bookingData.phone,
+                  service: services.find(s => s.id === bookingData.service)?.name || '',
+                  date: format(bookingData.date, 'MMMM do, yyyy'),
+                  time: bookingData.time,
+                }
+              );
+              console.log('Admin email response:', adminRes);
+
+              // Send client confirmation
+              console.log('Sending client email...');
+              const clientRes = await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_CLIENT,
+                {
+                  client_name: bookingData.name,
+                  client_email: bookingData.email,
+                  service: services.find(s => s.id === bookingData.service)?.name || '',
+                  date: format(bookingData.date, 'MMMM do, yyyy'),
+                  time: bookingData.time,
+                }
+              );
+              console.log('Client email response:', clientRes);
+            } catch (error) {
+              console.error('Email sending failed', error);
+              alert("Failed to send confirmation email. Please check your internet or console for details.");
+            }
+            setStep(4);
+          }}
                                                 disabled={!isStep3Valid}
                                                 className="btn-primary flex items-center space-x-3 disabled:opacity-30"
                                             >

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, User, LayoutDashboard } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import Logo from '../assets/CA_logo.png';
@@ -8,6 +8,10 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [user, setUser] = useState(null);
+    const location = useLocation();
+
+    // Pages that have a dark background at the top
+    const isDarkPage = ['/knowledge-hub', '/book'].includes(location.pathname);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -36,30 +40,34 @@ const Navbar = () => {
         };
     }, []);
 
+    const textColorClass = (!scrolled && isDarkPage) ? 'text-white' : 'text-brand-navy';
+    const logoColorClass = (!scrolled && isDarkPage) ? 'text-white' : 'text-brand-navy';
+    const activeIconClass = (!scrolled && isDarkPage) ? 'text-brand-ice' : 'text-brand-primary';
+
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl py-3 border-b border-brand-ice shadow-sm' : 'bg-transparent py-6'}`}>
+        <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl py-2 border-b border-brand-ice shadow-sm' : 'bg-transparent py-4 md:py-6'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
-                    <div className="flex items-center">
-                        <Link to="/" className="flex items-center space-x-3 group">
-                            <img src={Logo} alt="JN Shah Associates Logo" className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
-                            <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl md:text-3xl font-bold text-brand-navy tracking-normal flex items-center -mt-4">
-                                JN<span className="text-brand-primary italic ml-1">Shah Associates</span>
+                <div className="flex flex-wrap justify-between items-center min-h-[4rem] gap-y-4">
+                    <div className="flex items-center shrink-0">
+                        <Link to="/" className="flex flex-wrap items-center gap-2 sm:gap-3 group py-2 min-w-0">
+                            <img src={Logo} alt="JN Shah Associates Logo" className="h-8 sm:h-10 md:h-12 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105" />
+                            <span style={{ fontFamily: "'Playfair Display', serif" }} className={`text-xl sm:text-2xl md:text-3xl font-bold tracking-tight flex flex-wrap items-center break-words min-w-0 transition-colors ${logoColorClass}`}>
+                                JN<span className={`italic ml-1 transition-colors ${activeIconClass}`}>Shah Associates</span>
                             </span>
                         </Link>
                     </div>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-12">
-                        <Link to="/" className="text-brand-navy font-extrabold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">Home</Link>
-                        <Link to="/about" className="text-brand-navy font-extrabold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">About</Link>
-                        <Link to="/services" className="text-brand-navy font-extrabold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">Services</Link>
-                        <Link to="/book" className="bg-brand-navy hover:bg-brand-primary text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg active:scale-95">
+                        <Link to="/" className={`${textColorClass} font-extrabold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors`}>Home</Link>
+                        <Link to="/about" className={`${textColorClass} font-extrabold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors`}>About</Link>
+                        <Link to="/services" className={`${textColorClass} font-extrabold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors`}>Services</Link>
+                        <Link to="/book" className="bg-brand-navy hover:bg-brand-primary text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg active:scale-95 shadow-brand-navy/20">
                             Free Consultation
                         </Link>
                         <Link
                             to={user ? "/dashboard" : "/login"}
-                            className="flex items-center space-x-2 text-brand-navy hover:text-brand-primary font-extrabold text-sm uppercase tracking-widest transition-colors"
+                            className={`flex items-center space-x-2 ${textColorClass} hover:text-brand-primary font-extrabold text-sm uppercase tracking-widest transition-colors`}
                         >
                             {user ? <LayoutDashboard className="w-5 h-5" /> : <User className="w-5 h-5" />}
                             <span>{user ? "Dashboard" : "Login / Sign Up"}</span>
@@ -70,7 +78,7 @@ const Navbar = () => {
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-brand-navy hover:text-brand-primary p-2 transition-colors"
+                            className={`${textColorClass} hover:text-brand-primary p-2 transition-colors`}
                         >
                             {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
                         </button>

@@ -15,7 +15,7 @@ const BusinessAdvisory = () => {
     ];
 
     return (
-        <div className="pt-40 pb-24">
+        <div className="pt-28 pb-24">
             <SEO
                 title="Business Advisory & Startup Mentorship"
                 description="Scale your business with expert financial advisory in Vadodara. From company incorporation to loan syndication and strategic growth planning."

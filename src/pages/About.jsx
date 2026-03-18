@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 const About = () => {
     return (
-        <div className="pt-40 pb-24">
+        <div className="pt-28 pb-24">
             <SEO
                 title="Our Legacy & Founders"
                 description="Learn about the multi-generational journey of JN Shah Associates, led by CA Nayan Shah and CA Jay Shah. Committed to integrity and financial excellence since 2014."
@@ -25,10 +25,9 @@ const About = () => {
                             Our journey is defined by the success of our clients. From startups to established manufacturing firms, we provide the technical depth and foresight required in today's rapid business environment.
                         </p>
                     </motion.div>
-                    <div className="relative p-12 md:p-24">
-                        <div className="bg-white border border-brand-ice rounded-[3rem] p-12 md:p-20 flex flex-col items-center justify-center shadow-2xl shadow-brand-navy/5 relative z-0 min-h-[450px]">
-                            {/* Inner content with safe-zone padding to avoid badge overlap */}
-                            <div className="text-center pb-24 md:pb-32">
+                    <div className="relative md:p-16 lg:p-24">
+                        <div className="bg-white border border-brand-ice rounded-[3rem] p-10 md:p-20 flex flex-col items-center justify-center shadow-2xl shadow-brand-navy/5 relative z-0 min-h-[350px] md:min-h-[450px]">
+                            <div className="text-center pb-4 md:pb-24">
                                 <div className="w-24 h-24 bg-brand-primary/5 rounded-3xl flex items-center justify-center mx-auto mb-10">
                                     <Award className="w-12 h-12 text-brand-primary opacity-90" />
                                 </div>
@@ -36,9 +35,11 @@ const About = () => {
                                 <p className="text-corporate-text font-black text-xs uppercase tracking-[0.3em] opacity-60">Established & Trusted since 2014</p>
                             </div>
                         </div>
-                        <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 lg:bottom-16 lg:right-16 bg-brand-navy px-10 py-12 rounded-[3rem] shadow-[0_30px_60px_rgba(22,49,114,0.4)] z-10 border border-white/20 transition-all hover:-translate-y-4 hover:rotate-2">
+
+                        {/* Badge: centered below on mobile, absolute bottom-right on md+ */}
+                        <div className="mt-6 mx-auto w-fit md:mt-0 md:absolute md:bottom-4 md:right-4 lg:bottom-8 lg:right-8 bg-brand-navy px-10 py-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(22,49,114,0.35)] z-10 border border-white/20 transition-all hover:-translate-y-2 hover:rotate-1 text-center">
                             <div className="text-white font-extrabold text-5xl font-heading leading-none">500+</div>
-                            <div className="text-brand-ice text-[10px] font-black uppercase tracking-[0.3em] mt-5">Trusted Clients</div>
+                            <div className="text-brand-ice text-[10px] font-black uppercase tracking-[0.3em] mt-4">Trusted Clients</div>
                         </div>
                     </div>
                 </div>
@@ -79,13 +80,13 @@ const About = () => {
                             <div className="w-32 h-32 bg-brand-bg rounded-[2.5rem] flex items-center justify-center shrink-0 border border-brand-ice group-hover:bg-brand-primary/5 transition-colors">
                                 <partner.icon className="w-12 h-12 text-brand-navy/20 group-hover:text-brand-primary transition-colors" />
                             </div>
-                            <div>
+                            <div className="text-center md:text-left">
                                 <h3 className="text-2xl font-black text-brand-navy mb-1">{partner.name}</h3>
                                 <p className="text-brand-primary font-black text-xs uppercase tracking-widest mb-4">{partner.title}</p>
                                 <p className="text-corporate-text text-sm font-medium leading-relaxed mb-6 italic opacity-80">
                                     "{partner.desc}"
                                 </p>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                                     {partner.expertise.map((tag, tIdx) => (
                                         <span key={tIdx} className="bg-brand-ice/40 text-brand-navy/60 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider border border-brand-ice/50">
                                             {tag}

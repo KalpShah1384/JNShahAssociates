@@ -61,7 +61,7 @@ const Contact = () => {
         }
     };
     return (
-        <div className="pt-40 pb-24">
+        <div className="pt-28 pb-24">
             <SEO
                 title="Book a Free Consultation"
                 description="Contact JN Shah Associates today for professional CA services in Vadodara. Schedule your free consultation for tax filing, GST registration, or business advisory."
