@@ -1,9 +1,21 @@
 import { motion } from "framer-motion";
-import { Shield, Eye, Lock, FileText, AlertTriangle, Phone } from "lucide-react";
+import {
+  Shield,
+  Eye,
+  Lock,
+  FileText,
+  AlertTriangle,
+  Phone,
+} from "lucide-react";
+import SEO from "../components/SEO";
 
 const PrivacyPolicy = () => {
   return (
     <div className="bg-gray-50 pt-28 pb-24">
+      <SEO
+        title="Privacy Policy"
+        description="Read the Privacy Policy of JN Shah Associates covering data collection, processing, security, and your rights under Indian law and GDPR."
+      />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,7 +31,6 @@ const PrivacyPolicy = () => {
           </div>
 
           <div className="space-y-8 text-gray-600 leading-relaxed">
-
             {/* Compliance Notice */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <div className="flex items-center space-x-2 mb-2">
@@ -29,10 +40,10 @@ const PrivacyPolicy = () => {
                 </span>
               </div>
               <p className="text-sm">
-                This Privacy Policy complies with the Information Technology Act,
-                2000 (IT Act), Information Technology Rules, 2011, and the General
-                Data Protection Regulation (GDPR) where applicable to EU data
-                subjects.
+                This Privacy Policy complies with the Information Technology
+                Act, 2000 (IT Act), Information Technology Rules, 2011, and the
+                General Data Protection Regulation (GDPR) where applicable to EU
+                data subjects.
               </p>
             </div>
 
@@ -194,7 +205,9 @@ const PrivacyPolicy = () => {
               <ul className="list-disc list-inside space-y-2 ml-4 text-gray-700">
                 <li>Financial records: 7 years</li>
                 <li>GST records: 6 years</li>
-                <li>Client contact information: Relationship duration + 3 years</li>
+                <li>
+                  Client contact information: Relationship duration + 3 years
+                </li>
                 <li>Marketing data: Until consent withdrawal</li>
               </ul>
             </div>
@@ -257,7 +270,6 @@ const PrivacyPolicy = () => {
                 JN Shah Associates may update this policy as regulations evolve.
               </p>
             </div>
-
           </div>
         </motion.div>
       </section>

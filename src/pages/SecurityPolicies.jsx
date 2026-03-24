@@ -1,9 +1,24 @@
 import { motion } from "framer-motion";
-import { Shield, Lock, AlertTriangle, Users, Server, FileCheck, Eye, Clock, Phone } from "lucide-react";
+import {
+  Shield,
+  Lock,
+  AlertTriangle,
+  Users,
+  Server,
+  FileCheck,
+  Eye,
+  Clock,
+  Phone,
+} from "lucide-react";
+import SEO from "../components/SEO";
 
 const SecurityPolicies = () => {
   return (
     <div className="bg-gray-50 pt-28 pb-24">
+      <SEO
+        title="Security Policies"
+        description="Detailed information security, encryption, access control, and incident response policies followed by JN Shah Associates to protect client data."
+      />
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -27,15 +42,15 @@ const SecurityPolicies = () => {
               </h2>
             </div>
             <p className="text-blue-800">
-              At JN Shah Associates, data security is fundamental to our practice. We are committed to
-              maintaining the highest standards of information security, protecting client data,
-              and ensuring compliance with international and Indian security regulations. This
-              policy outlines our comprehensive security framework.
+              At JN Shah Associates, data security is fundamental to our
+              practice. We are committed to maintaining the highest standards of
+              information security, protecting client data, and ensuring
+              compliance with international and Indian security regulations.
+              This policy outlines our comprehensive security framework.
             </p>
           </div>
 
           <div className="space-y-8 text-gray-600 leading-relaxed">
-
             {/* 1. Data Encryption */}
             <div>
               <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center space-x-2">
@@ -45,7 +60,9 @@ const SecurityPolicies = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">At Rest Encryption</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    At Rest Encryption
+                  </h4>
                   <ul className="text-sm space-y-1 text-gray-700">
                     <li>• AES-256 encryption for all stored data</li>
                     <li>• Database-level encryption</li>
@@ -55,7 +72,9 @@ const SecurityPolicies = () => {
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">In Transit Encryption</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    In Transit Encryption
+                  </h4>
                   <ul className="text-sm space-y-1 text-gray-700">
                     <li>• TLS 1.3 for all data transmission</li>
                     <li>• End-to-end encryption for client communications</li>
@@ -75,9 +94,12 @@ const SecurityPolicies = () => {
 
               <div className="space-y-4">
                 <div className="border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Multi-Factor Authentication (MFA)</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Multi-Factor Authentication (MFA)
+                  </h4>
                   <p className="text-sm text-gray-700 mb-2">
-                    All staff members and systems require MFA for access to client data and sensitive systems.
+                    All staff members and systems require MFA for access to
+                    client data and sensitive systems.
                   </p>
                   <ul className="text-sm space-y-1 text-gray-600 ml-4">
                     <li>• Hardware security keys preferred</li>
@@ -87,9 +109,12 @@ const SecurityPolicies = () => {
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Role-Based Access Control (RBAC)</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Role-Based Access Control (RBAC)
+                  </h4>
                   <p className="text-sm text-gray-700 mb-2">
-                    Access to data and systems is strictly limited to authorized personnel based on job requirements.
+                    Access to data and systems is strictly limited to authorized
+                    personnel based on job requirements.
                   </p>
                   <ul className="text-sm space-y-1 text-gray-600 ml-4">
                     <li>• Principle of least privilege</li>
@@ -109,7 +134,9 @@ const SecurityPolicies = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">Firewall & Intrusion Detection</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Firewall & Intrusion Detection
+                  </h4>
                   <ul className="text-sm space-y-1 text-gray-700">
                     <li>• Next-generation firewalls</li>
                     <li>• Intrusion detection/prevention systems</li>
@@ -119,7 +146,9 @@ const SecurityPolicies = () => {
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">Regular Security Updates</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Regular Security Updates
+                  </h4>
                   <ul className="text-sm space-y-1 text-gray-700">
                     <li>• Automated patch management</li>
                     <li>• Vulnerability scanning weekly</li>
@@ -139,27 +168,41 @@ const SecurityPolicies = () => {
 
               <div className="space-y-4">
                 <div className="border border-red-200 bg-red-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-red-900 mb-2">Breach Response Timeline</h4>
+                  <h4 className="font-semibold text-red-900 mb-2">
+                    Breach Response Timeline
+                  </h4>
                   <div className="space-y-2 text-sm text-red-800">
                     <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4" />
-                      <span><strong>Immediate (0-1 hour):</strong> Incident detection and containment</span>
+                      <span>
+                        <strong>Immediate (0-1 hour):</strong> Incident
+                        detection and containment
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4" />
-                      <span><strong>Within 24 hours:</strong> Internal investigation and assessment</span>
+                      <span>
+                        <strong>Within 24 hours:</strong> Internal investigation
+                        and assessment
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4" />
-                      <span><strong>Within 72 hours:</strong> Notification to affected parties (GDPR compliance)</span>
+                      <span>
+                        <strong>Within 72 hours:</strong> Notification to
+                        affected parties (GDPR compliance)
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Response Team</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Response Team
+                  </h4>
                   <p className="text-sm text-gray-700 mb-2">
-                    Our incident response team includes certified security professionals and legal counsel.
+                    Our incident response team includes certified security
+                    professionals and legal counsel.
                   </p>
                   <ul className="text-sm space-y-1 text-gray-600 ml-4">
                     <li>• 24/7 security monitoring team</li>
@@ -180,7 +223,9 @@ const SecurityPolicies = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">Office Security</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Office Security
+                  </h4>
                   <ul className="text-sm space-y-1 text-gray-700">
                     <li>• 24/7 access control systems</li>
                     <li>• CCTV surveillance</li>
@@ -190,7 +235,9 @@ const SecurityPolicies = () => {
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">Device Security</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Device Security
+                  </h4>
                   <ul className="text-sm space-y-1 text-gray-700">
                     <li>• Full disk encryption on all devices</li>
                     <li>• Remote wipe capability</li>
@@ -210,21 +257,34 @@ const SecurityPolicies = () => {
 
               <div className="border border-gray-200 rounded-lg p-4">
                 <p className="text-gray-700 mb-4">
-                  All employees undergo comprehensive security training as part of our commitment to data protection.
+                  All employees undergo comprehensive security training as part
+                  of our commitment to data protection.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
-                    <div className="font-semibold text-blue-900">Annual Training</div>
-                    <div className="text-sm text-blue-700">Mandatory security awareness</div>
+                    <div className="font-semibold text-blue-900">
+                      Annual Training
+                    </div>
+                    <div className="text-sm text-blue-700">
+                      Mandatory security awareness
+                    </div>
                   </div>
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
-                    <div className="font-semibold text-blue-900">Phishing Tests</div>
-                    <div className="text-sm text-blue-700">Quarterly simulation exercises</div>
+                    <div className="font-semibold text-blue-900">
+                      Phishing Tests
+                    </div>
+                    <div className="text-sm text-blue-700">
+                      Quarterly simulation exercises
+                    </div>
                   </div>
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
-                    <div className="font-semibold text-blue-900">New Hire Onboarding</div>
-                    <div className="text-sm text-blue-700">Security training within first week</div>
+                    <div className="font-semibold text-blue-900">
+                      New Hire Onboarding
+                    </div>
+                    <div className="text-sm text-blue-700">
+                      Security training within first week
+                    </div>
                   </div>
                 </div>
               </div>
@@ -239,28 +299,44 @@ const SecurityPolicies = () => {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="text-center p-4 border border-gray-200 rounded-lg">
-                  <div className="font-semibold text-gray-900">SOC 2 Type II</div>
-                  <div className="text-sm text-gray-600">Trust service criteria compliance</div>
+                  <div className="font-semibold text-gray-900">
+                    SOC 2 Type II
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Trust service criteria compliance
+                  </div>
                 </div>
                 <div className="text-center p-4 border border-gray-200 rounded-lg">
                   <div className="font-semibold text-gray-900">ISO 27001</div>
-                  <div className="text-sm text-gray-600">Information security management</div>
+                  <div className="text-sm text-gray-600">
+                    Information security management
+                  </div>
                 </div>
                 <div className="text-center p-4 border border-gray-200 rounded-lg">
                   <div className="font-semibold text-gray-900">GDPR</div>
-                  <div className="text-sm text-gray-600">European data protection</div>
+                  <div className="text-sm text-gray-600">
+                    European data protection
+                  </div>
                 </div>
                 <div className="text-center p-4 border border-gray-200 rounded-lg">
                   <div className="font-semibold text-gray-900">IT Act 2000</div>
-                  <div className="text-sm text-gray-600">Indian cybersecurity law</div>
+                  <div className="text-sm text-gray-600">
+                    Indian cybersecurity law
+                  </div>
                 </div>
                 <div className="text-center p-4 border border-gray-200 rounded-lg">
                   <div className="font-semibold text-gray-900">PCI DSS</div>
-                  <div className="text-sm text-gray-600">Payment card security</div>
+                  <div className="text-sm text-gray-600">
+                    Payment card security
+                  </div>
                 </div>
                 <div className="text-center p-4 border border-gray-200 rounded-lg">
-                  <div className="font-semibold text-gray-900">ICAI Standards</div>
-                  <div className="text-sm text-gray-600">Professional accounting ethics</div>
+                  <div className="font-semibold text-gray-900">
+                    ICAI Standards
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Professional accounting ethics
+                  </div>
                 </div>
               </div>
             </div>
@@ -272,11 +348,14 @@ const SecurityPolicies = () => {
               </h2>
 
               <p className="text-gray-700 mb-4">
-                We carefully evaluate and monitor all third-party service providers to ensure they meet our security standards.
+                We carefully evaluate and monitor all third-party service
+                providers to ensure they meet our security standards.
               </p>
 
               <div className="border border-gray-200 rounded-lg p-4">
-                <h4 className="font-semibold text-gray-900 mb-2">Vendor Assessment Process</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  Vendor Assessment Process
+                </h4>
                 <ul className="text-sm space-y-1 text-gray-600 ml-4">
                   <li>• Security questionnaire completion</li>
                   <li>• Background checks for critical vendors</li>
@@ -298,16 +377,29 @@ const SecurityPolicies = () => {
                 <div className="flex items-center space-x-3 mb-4">
                   <Shield className="w-5 h-5 text-blue-500" />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Chief Information Security Officer</h4>
+                    <h4 className="font-semibold text-gray-900">
+                      Chief Information Security Officer
+                    </h4>
                     <p className="text-gray-600">JN Shah Associates</p>
                   </div>
                 </div>
 
                 <div className="space-y-2 text-sm">
-                  <p><strong>Security Incidents:</strong> jnshahassociates8002@gmail.com</p>
-                  <p><strong>Emergency Hotline:</strong> +91 XXXXX XXXXX (24/7)</p>
-                  <p><strong>Response Time:</strong> Critical incidents within 1 hour</p>
-                  <p><strong>Anonymous Reporting:</strong> Available for internal security concerns</p>
+                  <p>
+                    <strong>Security Incidents:</strong>{" "}
+                    jnshahassociates8002@gmail.com
+                  </p>
+                  <p>
+                    <strong>Emergency Hotline:</strong> +91 XXXXX XXXXX (24/7)
+                  </p>
+                  <p>
+                    <strong>Response Time:</strong> Critical incidents within 1
+                    hour
+                  </p>
+                  <p>
+                    <strong>Anonymous Reporting:</strong> Available for internal
+                    security concerns
+                  </p>
                 </div>
               </div>
             </div>
@@ -315,12 +407,14 @@ const SecurityPolicies = () => {
             {/* Footer */}
             <div className="pt-8 border-t border-gray-200">
               <p className="text-sm text-gray-500">
-                <strong>Last updated:</strong> March 2026<br/>
-                <strong>Next security audit:</strong> June 2026<br/>
-                This policy is reviewed annually and updated as needed to address emerging threats and regulatory changes.
+                <strong>Last updated:</strong> March 2026
+                <br />
+                <strong>Next security audit:</strong> June 2026
+                <br />
+                This policy is reviewed annually and updated as needed to
+                address emerging threats and regulatory changes.
               </p>
             </div>
-
           </div>
         </motion.div>
       </section>
