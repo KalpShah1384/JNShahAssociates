@@ -106,7 +106,7 @@ const Home = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl order-2 md:order-1">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="flex justify-center md:justify-end"
+              className="flex justify-center md:justify-end order-1 md:order-2"
             >
               <div className="relative w-56 sm:w-64 md:w-72 lg:w-80">
                 <div className="absolute inset-0 rounded-[2.75rem] bg-brand-primary/5 blur-2xl animate-pulse" />
