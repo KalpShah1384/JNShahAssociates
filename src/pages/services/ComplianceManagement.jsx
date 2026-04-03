@@ -78,7 +78,7 @@ const ComplianceManagement = () => {
 
                 <div className="bg-brand-navy p-12 rounded-[3rem] text-center relative overflow-hidden shadow-2xl">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">Avoid Penalties & Legal Hassles</h2>
-                    <p className="text-brand-ice/80 mb-10 max-w-2xl mx-auto font-medium">Compliance is becoming more digital and rigorous. Stay ahead with JN Shah Associates' managed services.</p>
+                    <p className="text-brand-ice/80 mb-10 max-w-2xl mx-auto font-medium">Compliance is becoming more digital and rigorous. Stay ahead with <span style={{ fontFamily: "var(--font-trajan)" }} className="font-bold">JN Shah Associates'</span> managed services.</p>
                     <Link to="/book" className="bg-brand-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-white hover:text-brand-navy transition-all inline-flex items-center group">
                         Inquire for Compliance <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                     </Link>

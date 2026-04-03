@@ -73,12 +73,12 @@ const Navbar = () => {
                 className="h-8 sm:h-10 md:h-12 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
               />
               <span
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "var(--font-trajan)" }}
                 className={`text-xl sm:text-2xl md:text-3xl font-bold tracking-tight flex flex-wrap items-center break-words min-w-0 transition-colors ${logoColorClass}`}
               >
                 JN
                 <span
-                  className={`italic ml-1 transition-colors ${activeIconClass}`}
+                  className={`ml-1 transition-colors ${activeIconClass}`}
                 >
                   Shah Associates
                 </span>

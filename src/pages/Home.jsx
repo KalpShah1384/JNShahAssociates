@@ -106,13 +106,14 @@ const Home = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="max-w-3xl order-2 md:order-1">
+
+            <div className="max-w-3xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="badge-soft mb-6 inline-block">
+                <span className="badge-soft mb-6 hidden md:inline-block">
                   ICAI Compliant Chartered Accountancy Firm
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 md:mb-8 leading-[1.15] text-brand-navy tracking-tight font-heading">
@@ -120,7 +121,7 @@ const Home = () => {
                   <span className="text-brand-primary italic">Excellence</span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-corporate-text/90 mb-8 md:mb-12 leading-relaxed max-w-2xl font-medium tracking-wide">
-                  JN Shah Associates provides comprehensive taxation, audit, and
+                  <span style={{ fontFamily: "var(--font-trajan)" }} className="font-bold">JN Shah Associates</span> provides comprehensive taxation, audit, and
                   business advisory services. We transform complex financial
                   regulations into clear, actionable strategies for your growth.
                 </p>
@@ -146,7 +147,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="flex justify-center md:justify-end order-1 md:order-2"
+              className="flex justify-center md:justify-end"
             >
               <div className="relative w-56 sm:w-64 md:w-72 lg:w-80">
                 <div className="absolute inset-0 rounded-[2.75rem] bg-brand-primary/5 blur-2xl animate-pulse" />
@@ -154,19 +155,17 @@ const Home = () => {
                   <div className="absolute -top-16 -right-10 w-32 h-32 bg-brand-primary/10 rounded-full blur-3xl" />
                   <div className="absolute -bottom-16 -left-10 w-32 h-32 bg-brand-ice/40 rounded-full blur-3xl" />
 
-                  {/* <div className="relative inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/5 border border-brand-primary/20 text-[10px] font-black uppercase tracking-[0.2em] text-brand-primary mb-5">
-                                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                                        <span>Trusted CA Partner</span>
-                                    </div> */}
-
                   <img
                     src={Logo}
                     alt="JN Shah Associates Chartered Accountants"
                     className="relative h-20 sm:h-24 md:h-28 w-auto object-contain mb-4 drop-shadow-md"
                   />
-                  <p className="relative text-brand-navy font-black text-xs sm:text-[11px] uppercase tracking-[0.25em] mb-3">
-                    JN Shah Associates
-                  </p>
+                   <p 
+                    style={{ fontFamily: "var(--font-trajan)" }}
+                    className="relative text-brand-navy font-black text-xs sm:text-[11px] uppercase tracking-[0.25em] mb-3"
+                   >
+                     JN Shah Associates
+                   </p>
                   <div className="relative flex items-center justify-center gap-6 mt-2 text-[11px] sm:text-xs font-semibold text-corporate-text/70">
                     <div className="flex flex-col items-center">
                       <span className="text-brand-navy font-extrabold text-lg">
@@ -397,7 +396,7 @@ const Home = () => {
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-brand-navy">
                 Why Businesses Trust{" "}
-                <span className="text-brand-primary">JN Shah Associates</span>
+                <span style={{ fontFamily: "var(--font-trajan)" }} className="text-brand-primary font-bold">JN Shah Associates</span>
               </h2>
               <p className="text-base sm:text-lg text-corporate-text mb-8 md:mb-12 flex items-start font-medium">
                 Our firm is built on the pillars of integrity, expertise, and

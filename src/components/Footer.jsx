@@ -14,8 +14,8 @@ const Footer = () => {
                     <div className="space-y-8">
                         <Link to="/" className="flex items-center space-x-3 group">
                             <img src={Logo} alt="JN Shah Associates Logo" className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
-                            <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl md:text-3xl font-bold text-white tracking-normal">
-                                JN<span className="text-brand-ice italic ml-1">Shah Associates</span>
+                            <span style={{ fontFamily: "var(--font-trajan)" }} className="text-2xl md:text-3xl font-bold text-white tracking-normal">
+                                JN<span className="text-brand-ice ml-1">Shah Associates</span>
                             </span>
                         </Link>
                         <p className="text-brand-ice/60 leading-relaxed font-bold text-sm tracking-wide">

@@ -32,7 +32,7 @@ const DirectTax = () => {
                             Strategic <span className="text-brand-primary">Direct Tax</span> Advisory
                         </h1>
                         <p className="text-corporate-text text-lg leading-relaxed mb-8 font-medium">
-                            In an ever-evolving tax landscape, JN Shah Associates provides comprehensive direct taxation services designed to minimize liabilities and ensure total compliance with the Income Tax Act.
+                            In an ever-evolving tax landscape, <span style={{ fontFamily: "var(--font-trajan)" }} className="font-bold text-brand-navy">JN Shah Associates</span> provides comprehensive direct taxation services designed to minimize liabilities and ensure total compliance with the Income Tax Act.
                         </p>
                         <div className="flex space-x-4">
                             <Link to="/book" className="btn-primary">Get Expert Advice</Link>

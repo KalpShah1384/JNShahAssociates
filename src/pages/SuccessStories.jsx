@@ -233,7 +233,12 @@ const SuccessStories = () => {
                 <div className="mt-8 bg-gray-50 rounded-lg p-6 border border-gray-200">
                   <MessageSquare className="w-8 h-8 text-blue-500 mb-4" />
                   <blockquote className="text-gray-700 italic text-lg mb-4">
-                    "{story.testimonial}"
+                    "{story.testimonial.split('JN Shah Associates').map((part, i, arr) => (
+                      <span key={i}>
+                        {part}
+                        {i < arr.length - 1 && <span style={{ fontFamily: "var(--font-trajan)" }} className="font-bold text-blue-600">JN Shah Associates</span>}
+                      </span>
+                    ))}"
                   </blockquote>
                   <div className="flex items-center space-x-2">
                     <Building2 className="w-5 h-5 text-gray-500" />

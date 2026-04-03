@@ -30,7 +30,7 @@ const Disclaimer = () => {
             <ul className="list-disc pl-6 space-y-4">
               <li>
                 The user wishes to gain more information about{" "}
-                <strong className="text-brand-navy">JN Shah Associates</strong>{" "}
+                <span style={{ fontFamily: "var(--font-trajan)" }} className="text-brand-navy font-bold">JN Shah Associates</span>{" "}
                 for their own information and use.
               </li>
               <li>

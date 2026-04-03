@@ -19,7 +19,7 @@ const About = () => {
                     >
                         <h1 className="text-3xl md:text-5xl font-extrabold mb-8 text-brand-navy leading-[1.2]">Our <span className="text-brand-primary italic">Legacy</span> & Expertise</h1>
                         <p className="text-base md:text-lg text-corporate-text leading-relaxed mb-6 font-medium tracking-wide">
-                            Founded on the principles of absolute integrity and professional excellence, JN Shah Associates is a multi-generational firm led by a dedicated father-son duo. Both <strong className="text-brand-navy font-black">CA Nayan Shah</strong> and <strong className="text-brand-navy font-black">CA Jay Shah</strong> bring combined decades of technical expertise and strategic insight to every client relationship.
+                            Founded on the principles of absolute integrity and professional excellence, <span style={{ fontFamily: "var(--font-trajan)" }} className="font-bold text-brand-navy">JN Shah Associates</span> is a multi-generational firm led by a dedicated father-son duo. Both <strong className="text-brand-navy font-black">CA Nayan Shah</strong> and <strong className="text-brand-navy font-black">CA Jay Shah</strong> bring combined decades of technical expertise and strategic insight to every client relationship.
                         </p>
                         <p className="text-base md:text-lg text-corporate-text leading-relaxed font-medium tracking-wide">
                             Our journey is defined by the success of our clients. From startups to established manufacturing firms, we provide the technical depth and foresight required in today's rapid business environment.
@@ -142,7 +142,7 @@ const About = () => {
                 <div className="text-center mb-20">
                     <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-brand-navy">Our Core Values</h2>
                     <div className="w-24 h-1.5 bg-brand-primary mx-auto rounded-full mb-6" />
-                    <p className="text-corporate-text font-bold text-lg">The foundation of everything we do at JN Shah Associates.</p>
+                    <p className="text-corporate-text font-bold text-lg">The foundation of everything we do at <span style={{ fontFamily: "var(--font-trajan)" }} className="text-brand-navy">JN Shah Associates</span>.</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -42,7 +42,7 @@ const SecurityPolicies = () => {
               </h2>
             </div>
             <p className="text-blue-800">
-              At JN Shah Associates, data security is fundamental to our
+              At <span style={{ fontFamily: "var(--font-trajan)" }} className="font-bold text-brand-navy">JN Shah Associates</span>, data security is fundamental to our
               practice. We are committed to maintaining the highest standards of
               information security, protecting client data, and ensuring
               compliance with international and Indian security regulations.
@@ -380,7 +380,7 @@ const SecurityPolicies = () => {
                     <h4 className="font-semibold text-gray-900">
                       Chief Information Security Officer
                     </h4>
-                    <p className="text-gray-600">JN Shah Associates</p>
+                    <p className="text-gray-600 font-bold" style={{ fontFamily: "var(--font-trajan)" }}>JN Shah Associates</p>
                   </div>
                 </div>
 

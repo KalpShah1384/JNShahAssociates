@@ -251,7 +251,7 @@ const PrivacyPolicy = () => {
                     <h4 className="font-semibold text-gray-900">
                       Data Protection Officer
                     </h4>
-                    <p className="text-gray-600">JN Shah Associates</p>
+                    <p className="text-gray-600 font-bold" style={{ fontFamily: "var(--font-trajan)" }}>JN Shah Associates</p>
                   </div>
                 </div>
 
@@ -267,7 +267,7 @@ const PrivacyPolicy = () => {
             <div className="pt-8 border-t border-gray-200">
               <p className="text-sm text-gray-500">
                 Last updated: March 2026 <br />
-                JN Shah Associates may update this policy as regulations evolve.
+                <span style={{ fontFamily: "var(--font-trajan)" }} className="font-bold">JN Shah Associates</span> may update this policy as regulations evolve.
               </p>
             </div>
           </div>

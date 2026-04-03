@@ -24,6 +24,8 @@ import KnowledgeHub from "./pages/KnowledgeHub";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ErrorBoundary from "./components/ErrorBoundary";
 import NotFound from "./pages/NotFound";
+import ChatAgent from "./components/ChatAgent";
+import { AgentProvider } from "./lib/agentContext.jsx";
 
 // Service Pages
 import DirectTax from "./pages/services/DirectTax";
@@ -234,18 +236,21 @@ function App() {
   return (
     <ErrorBoundary>
       <Router>
-        <div className="min-h-screen flex flex-col overflow-x-hidden">
-          <ScrollToTop />
-          <Navbar />
-          <main
-            className="flex-grow relative bg-brand-bg"
-            style={{ minHeight: "100vh" }}
-          >
-            <AnimatedRoutes />
-          </main>
-          <WhatsAppButton />
-          <Footer />
-        </div>
+        <AgentProvider>
+          <div className="min-h-screen flex flex-col overflow-x-hidden">
+            <ScrollToTop />
+            <Navbar />
+            <main
+              className="flex-grow relative bg-brand-bg"
+              style={{ minHeight: "100vh" }}
+            >
+              <AnimatedRoutes />
+            </main>
+            <ChatAgent />
+            <WhatsAppButton />
+            <Footer />
+          </div>
+        </AgentProvider>
       </Router>
     </ErrorBoundary>
   );

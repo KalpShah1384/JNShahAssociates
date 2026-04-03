@@ -136,11 +136,11 @@ const Login = () => {
               />
             </div>
             <h1
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "var(--font-trajan)" }}
               className="text-3xl md:text-4xl font-bold text-brand-navy mb-3 tracking-normal"
             >
               JN
-              <span className="text-brand-primary italic ml-1">
+              <span className="text-brand-primary ml-1">
                 Shah Associates
               </span>
             </h1>
